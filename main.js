@@ -24,7 +24,13 @@ const svg2_RENAME = d3.select("#lineChart2")
 // 2.a: LOAD...
 d3.csv("weather.csv").then(data => {
     // 2.b: ... AND TRANSFORM DATA
-
+    data.forEach(d => {
+        d.year = new Date(d.date); // Parse dates and get year
+        d.average_precip_num = +d.average_precipitation; // Convert precipitation to numeric
+        d.actual_mean_temp_num = +d.actual_mean_temp; 
+        d.average_max_temp_num = +d.average_max_temp; 
+        d.actual_precip_num = +d.actual_precipitation;
+    });
     // 3.a: SET SCALES FOR CHART 1
 
 
