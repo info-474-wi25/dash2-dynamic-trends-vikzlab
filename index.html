@@ -1,40 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Challenge 3</title>
-    <!-- Load D3 library -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <!-- Connect to style.css for custom styles -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Challenge 3</title>
+  <!-- Load D3 library -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <!-- Connect to style.css for custom styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="vertical-container">
-    <!-- HEADER -->
-    <div class="item">
-        <h1>Dashboard 2 - Dynamic Trends D13</h1>
-        <p><strong>Author(s):</strong> Vikram Murali and Anushka Nayak</p>
-        <p><strong>Documentation:</strong>
-            <a href="https://docs.google.com/document/d/1n65rGpmhMZ3-Fq9Dpss4XnYuF-oFZjWQ5hsL15vBrjo/edit?usp=sharing" target="_blank">
-                Weather Documentation
-            </a>    
-        </p>
-    </div>
-    
-    <!-- CHART 1: TEMPERATURE -->
-    <div class="item chart-container">
-        <h2>Temperature Trends Over Time</h2>
-        <!-- We use a DIV instead of <svg> here. main.js will append an SVG. -->
-        <div id="lineChart1"></div>
-    </div>
+  <!-- HEADER -->
+  <div class="item">
+    <h1>Dashboard 2 - Dynamic Trends D13</h1>
+    <p><strong>Author(s):</strong> Vikram Murali and Anushka Nayak</p>
+    <p><strong>Documentation:</strong>
+      <a href="https://docs.google.com/document/d/1n65rGpmhMZ3-Fq9Dpss4XnYuF-oFZjWQ5hsL15vBrjo/edit?usp=sharing" target="_blank">
+        Weather Documentation
+      </a>
+    </p>
+  </div>
 
-    <!-- CHART 2: PRECIPITATION -->
-    <div class="item chart-container">
-        <h2>Precipitation Trends</h2>
-        <div id="lineChart2"></div>
+  <!-- WIDGET: TOGGLE CHECKBOXES -->
+  <div class="item horizontal-container">
+    <div class="item" id="toggleWidget" style="padding: 10px;">
+      <h3>Toggle Data Series</h3>
+      <!-- Chart 1 checkboxes -->
+      <div>
+        <strong>Chart 1: Temperature</strong><br>
+        <label>
+          <input type="checkbox" id="toggleActualTemp" checked>
+          Show Actual Mean Temp
+        </label>
+        <label style="margin-left:20px;">
+          <input type="checkbox" id="toggleAvgTemp" checked>
+          Show Average Max Temp
+        </label>
+      </div>
+      <!-- Chart 2 checkboxes -->
+      <div style="margin-top:10px;">
+        <strong>Chart 2: Precipitation</strong><br>
+        <label>
+          <input type="checkbox" id="toggleActualPrecip" checked>
+          Show Actual Monthly Avg
+        </label>
+        <label style="margin-left:20px;">
+          <input type="checkbox" id="toggleHistoricalPrecip" checked>
+          Show Historical Monthly Avg
+        </label>
+      </div>
     </div>
+  </div>
 
-    <!-- Main JS -->
-    <script src="main.js"></script>
+  <!-- CHART 1: TEMPERATURE -->
+  <div class="item chart-container">
+    <h2>Temperature Trends Over Time</h2>
+    <div id="lineChart1"></div>
+  </div>
+
+  <!-- CHART 2: PRECIPITATION -->
+  <div class="item chart-container">
+    <h2>Precipitation Trends</h2>
+    <div id="lineChart2"></div>
+  </div>
+
+  <!-- Main JS -->
+  <script src="main.js"></script>
 </body>
 </html>
